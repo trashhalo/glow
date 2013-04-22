@@ -5,6 +5,11 @@ import org.junit.Test
 class ClojureTestCase {
 
   @Clojure
+  def namespace(){"""
+     (:require [clojure.string :as string])
+  """}
+
+  @Clojure
   def hello() {"""
      (let [x "hello!"] x)
   """}
@@ -33,6 +38,11 @@ class ClojureTestCase {
     (map inc groovyList)
   """}
 
+  @Clojure
+  def makeItBig(x){"""
+    (string/capitalize x)
+  """}
+
   @Test
   void testHello() {
     assert hello().equals("hello!")
@@ -56,5 +66,10 @@ class ClojureTestCase {
   @Test
   void testCollectionMethodsWork(){
     assert incAll([1,2,3]) == [2,3,4]
+  }
+
+  @Test
+  void testNamepaceRequire(){
+    assert makeItBig("heLLo") == "Hello"
   }
 }
