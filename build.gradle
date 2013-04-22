@@ -1,4 +1,15 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
+version = "0.1"
+group = "trashhalo"
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "file://$projectDir/../maven-repo")
+    }
+  }
+}
 
 repositories {
   mavenCentral()
