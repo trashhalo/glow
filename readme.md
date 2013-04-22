@@ -7,6 +7,10 @@ It uses groovy AST transformations to rewrite the class so that it will compile 
 initialization and then changes the method to call to the clojure RT class to invoke the method at runtime when 
 the method is called.
 
+##Why?
+I like clojure but work professionally in groovy. This allows me to write some lisp without having to convert entire 
+projects over. Additionally, I wanted to play with AST transformations.
+
 ##How do I use it?
 
 Annotate groovy methods on a class with Clojure to compile it as clojure.
@@ -30,3 +34,4 @@ def getUser(){
 def greetUser(greeting){"""
     (println (str greeting ", " (.getUser this)))
 """}
+```
