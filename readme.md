@@ -47,7 +47,7 @@ Be sure make this the first class method.
 ```groovy
 @Clojure
 def namespace(){"""
- (:require [clojure.string :as string])
+    (:require [clojure.string :as string])
 """}
   
 @Clojure
