@@ -13,7 +13,7 @@ projects over. Additionally, I wanted to play with AST transformations.
 
 ##How do I use it?
 
-Annotate groovy methods on a class with Clojure to compile it as clojure.
+Annotate groovy methods on a class with @Clojure to compile it as clojure.
 
 ```groovy
 @Clojure
