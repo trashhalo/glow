@@ -3,11 +3,11 @@
 Allows you to write groovy class methods in clojure.
 
 ##How does it work?
-It uses groovy AST transformations to compile the clojure code during class initialization and then calls to the clojure
-RT class to invoke the method at runtime when the method is called.
+It uses groovy AST transformations to rewrite the class so that it will compile the clojure code during class 
+initialization and then changes the method to call to the clojure RT class to invoke the method at runtime when 
+the method is called.
 
 ##How do I use it?
-
 
 Annotate groovy methods on a class with Clojure to compile it as clojure.
 
