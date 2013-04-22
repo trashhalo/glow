@@ -79,7 +79,7 @@ class ClojureAstTransformation implements ASTTransformation {
           it.expression.variableExpression.name.equals(CLOJURE_VARIABLE_NAME)
     }?.expression
     if (!exp) {
-      return createNamespace(node, node.name, method.name == "namespace" ? method.code.statements.first()?.expression?.value.toString() : null)
+      return createNamespace(node, node.name, method.name == "namespace" ? method.code.statements.first()?.expression?.value.toString() : '')
     } else {
       exp
     }
