@@ -28,6 +28,11 @@ class ClojureTestCase {
     (str x (.callOut this))
   """}
 
+  @Clojure
+  def incAll(groovyList) {"""
+    (map inc groovyList)
+  """}
+
   @Test
   void testHello() {
     assert hello().equals("hello!")
@@ -46,5 +51,10 @@ class ClojureTestCase {
   @Test
   void testHelloWithArgAndCallOut() {
     assert helloWithArgAndCallOut("xxx").equals("xxx"+callOut())
+  }
+
+  @Test
+  void testCollectionMethodsWork(){
+    assert incAll([1,2,3]) == [2,3,4]
   }
 }
