@@ -29,8 +29,8 @@ class ClojureAstTransformation implements ASTTransformation {
     String methodName = method.name
     String value = method.code.statements.first().expression.value
     String params = method.parameters*.name.join(",")
-    if(params.size()>0){
-      params = ","+params
+    if (params.size() > 0) {
+      params = "," + params
     }
     String clojureCode = """
       (ns $clazz)
@@ -45,12 +45,12 @@ class ClojureAstTransformation implements ASTTransformation {
 
   }
 
-  private Statement callToField(clazz, fieldName, args=[]) {
-    def params = args.collect{arg->
+  private Statement callToField(clazz, fieldName, args = []) {
+    def params = args.collect { arg ->
       new VariableExpression(arg.name)
     }
-    params.add(0,new VariableExpression("this"))
-    block([ret(call(call(classForName('clojure.lang.RT'), 'var', [str(clazz), str(fieldName)]), 'invoke',params))])
+    params.add(0, new VariableExpression("this"))
+    block([ret(call(call(classForName('clojure.lang.RT'), 'var', [str(clazz), str(fieldName)]), 'invoke', params))])
   }
 
   private getClassCompiler() {

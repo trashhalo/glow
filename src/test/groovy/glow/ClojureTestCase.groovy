@@ -2,39 +2,39 @@ package glow
 
 import org.junit.Test
 
-class ClojureTestCase{
+class ClojureTestCase {
 
   @Clojure
-  def hello(){"""
+  def hello() {"""
      (let [x "hello!"] x)
   """}
 
   @Clojure
-  def helloWithArg(x){"""
+  def helloWithArg(x) {"""
      x
   """}
 
-  def callOut(){
+  def callOut() {
     "hello!"
   }
 
   @Clojure
-  def helloWithCallOut(){"""
+  def helloWithCallOut() {"""
     (.callOut this)
   """}
 
   @Test
-  void testHello(){
+  void testHello() {
     assert hello().equals("hello!")
   }
 
   @Test
-  void testHelloWithArg(){
+  void testHelloWithArg() {
     assert helloWithArg("hello!").equals("hello!")
   }
 
   @Test
-  void testHelloWithCallOut(){
+  void testHelloWithCallOut() {
     assert helloWithCallOut().equals(callOut())
   }
 }
