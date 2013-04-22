@@ -23,6 +23,11 @@ class ClojureTestCase {
     (.callOut this)
   """}
 
+  @Clojure
+  def helloWithArgAndCallOut(x) {"""
+    (str x (.callOut this))
+  """}
+
   @Test
   void testHello() {
     assert hello().equals("hello!")
@@ -36,5 +41,10 @@ class ClojureTestCase {
   @Test
   void testHelloWithCallOut() {
     assert helloWithCallOut().equals(callOut())
+  }
+
+  @Test
+  void testHelloWithArgAndCallOut() {
+    assert helloWithArgAndCallOut("xxx").equals("xxx"+callOut())
   }
 }
