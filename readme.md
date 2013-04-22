@@ -1,4 +1,7 @@
 #Glow
+##What does it do?
+Allows you to write groovy class methods in clojure.
+
 ##How does it work?
 It uses groovy AST transformations to compile the clojure code during class initialization and then calls to the clojure
 RT class to invoke the method at runtime when the method is called.
