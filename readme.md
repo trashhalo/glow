@@ -40,3 +40,19 @@ def greetUser(greeting){"""
     (println (str greeting ", " (.getUser this)))
 """}
 ```
+
+You can also fiddle with the namespace definition for the class by naming a clojure method 'namespace'.
+Be sure make this the first class method.
+
+```groovy
+@Clojure
+def namespace(){"""
+ (:require [clojure.string :as string])
+"""}
+  
+@Clojure
+def makeItBig(x){"""
+    (string/capitalize x)
+"""}
+
+```
