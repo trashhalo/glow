@@ -12,6 +12,11 @@ I like clojure but work professionally in groovy. This allows me to write some l
 projects over. Additionally, I wanted to play with AST transformations.
 
 ##How do I use it?
+1. [Add my maven repo to your project](https://github.com/trashhalo/maven-repo/blob/master/readme.md)
+2. Add glow as a compile dependency
+```
+compile 'trashhalo:glow:0.1-SNAPSHOT'
+```
 
 Annotate groovy methods on a class with @Clojure to compile it as clojure.
 
