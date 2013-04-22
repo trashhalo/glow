@@ -18,7 +18,6 @@ class ClojureAstTransformation implements ASTTransformation {
 
   public void visit(ASTNode[] nodes, SourceUnit sourceUnit) {
     nodes.findAll { it instanceof MethodNode }.each { MethodNode method ->
-      GString fieldName = "\$cljgen_${method.name}"
       method.declaringClass.addObjectInitializerStatements(compileClojureCode(method))
       method.setCode(callToField(method.declaringClass.name, method.name, method.parameters))
     }
