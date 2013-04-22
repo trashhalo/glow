@@ -4,7 +4,7 @@ Allows you to write groovy class methods in clojure.
 
 ##How does it work?
 It uses groovy AST transformations to rewrite the class so that it will compile the clojure code during class 
-initialization and then changes the method to call to the clojure RT class to invoke the method at runtime when 
+initialization and then changes the method to call to the clojure RT class to invoke the clojure code at runtime when
 the method is called.
 
 ##Why?
